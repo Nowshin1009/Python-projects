@@ -4,33 +4,32 @@ contact_Book= [
  {
     "name":"Taki",
     "phone":"01728437694",
-    "email":"takiul47-375@diu.edu.bd"
+    "email":"taki@diu.edu.bd"
 },
 
  {
     "name":"Taifa",
     "phone":"01728437694",
-    "email":"takiul47-375@diu.edu.bd"
+    "email":"taifa@diu.edu.bd"
 },
  {
     "name":"Tara",
     "phone":"01728437694",
-    "email":"takiul47-375@diu.edu.bd"
+    "email":"tara@diu.edu.bd"
 },
  {
     "name":"Tufa",
     "phone":"01728437694",
-    "email":"takiul47-375@diu.edu.bd"
+    "email":"tufa@diu.edu.bd"
 },
 
  {
     "name":"Afsana",
     "phone":"01728437694",
-    "email":"takiul47-375@diu.edu.bd"
+    "email":"afsana@diu.edu.bd"
 }
 ]
 
-contact_Book = []
 
 def create_contact():
     name = input("Enter name : ")
@@ -49,7 +48,7 @@ def create_contact():
 
 def view_all_contacts():
     for index, contact in enumerate(contact_Book):
-        print(f"{index+1}. {contact['name']} || {contact['phone']} || {contact["email"]} ")
+        print(f"{index+1}. {contact['name']} || {contact['phone']} || {contact['email']} ")
 
 
 def search_contact():
@@ -79,6 +78,7 @@ Your options:
 2. View All contacts
 3. Search a contact
 4. Remove a contact
+5. Exit
 """
 
 while True:
@@ -96,6 +96,8 @@ while True:
         search_contact()
     elif choice == "4":
         remove_contact()
+    elif choice == "5":
+        break
     else:
         print("Wrong choice!! Try again")
 
