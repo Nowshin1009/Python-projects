@@ -30,7 +30,7 @@ contact_Book= [
 }
 ]
 
-contact_book = []
+contact_Book = []
 
 def create_contact():
     name = input("Enter name : ")
@@ -43,19 +43,14 @@ def create_contact():
         "email":email
     }
 
-    contact_book.append(contact)
+    contact_Book.append(contact)
 
     print("Contact created successfully!")
 
-# create_contact()
-# create_contact()
-
-# print(contact_book)
-
 def view_all_contacts():
-    for contact in contact_Book:
-        print(contact["name"],contact["phone"],contact["email"], sep=" | ",)
-#view_all_contacts()
+    for index, contact in enumerate(contact_Book):
+        print(f"{index+1}. {contact['name']} || {contact['phone']} || {contact["email"]} ")
+
 
 def search_contact():
     search_term = input("Enter what you want to search : ")
@@ -63,7 +58,7 @@ def search_contact():
         if  search_term.lower() in contact["name"].lower():
             print(f"Found : {contact["name"]} - {contact["phone"]} - {contact["email"]}")
 
-#search_contact()
+
 
 def remove_contact():
         #search --> select  --> delete
@@ -75,5 +70,32 @@ def remove_contact():
         selected_index= int(selected_index)
 
         contact_Book.pop(selected_index-1)
-remove_contact()
-view_all_contacts()
+        print("Contact removed successfully!")
+
+print("=======WELCOME=========")
+menu_text= """
+Your options:
+1. Create contact
+2. View All contacts
+3. Search a contact
+4. Remove a contact
+"""
+
+while True:
+
+
+    print(menu_text)
+    print("Enter your choice : ")
+    choice = input()
+
+    if choice == "1":
+        create_contact()
+    elif choice == "2":
+        view_all_contacts()
+    elif choice == "3":
+        search_contact()
+    elif choice == "4":
+        remove_contact()
+    else:
+        print("Wrong choice!! Try again")
+
