@@ -1,4 +1,3 @@
- 
 contact_Book= [
 
  {
@@ -107,8 +106,41 @@ def update_contact():
     )
     print("Contact updated successfully!!!")
 
+def backup_contact():
+    # take all the contact and write them to a file
+    # name,phone,email
 
-    
+    # file_pointer = open("contacts.csv", "wt")
+
+    with open("contacts.csv", "wt") as file_pointer:
+        for contact in contact_Book:
+            line = f"{contact['name']},{contact['phone']},{contact['email']}\n"
+            file_pointer.write(line)
+
+    # file_pointer.close()
+
+    print("Contacts Backed Up!")
+
+def restore_contact():
+    # open file
+    # read all contacts
+    # save them to global contact book variable
+
+    contact_book.clear()
+
+    with open("contacts.csv", "r") as file_pointer:
+        for line in file_pointer.readlines():
+            line_splitted = line.strip().split(",")
+            contact = {
+                "name": line_splitted[0],
+                "phone": line_splitted[1],
+                "email": line_splitted[2],
+            }
+            contact_book.append(contact)
+
+    print("Contacts Restored!")
+
+
 
 
 print("=======WELCOME=========")
@@ -119,6 +151,8 @@ Your options:
 3. Search a contact
 4. Remove a contact
 5. Update a contact
+6. Backup contacts
+7. Restore contacts
 0. Exit
 """
 
@@ -139,8 +173,11 @@ while True:
         remove_contact()
     elif choice == "5":
         update_contact()
+    elif choice == "6":
+        backup_contact()
+    elif choice == "7":
+        restore_contact()
     elif choice == "0":
         break
     else:
         print("Wrong choice!! Try again")
-
