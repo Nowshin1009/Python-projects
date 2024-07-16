@@ -59,7 +59,9 @@ if __name__ == "__main__":
 
 
 """
-Sorry I know that amader instruction deya hoyechilo different functionality er jonno different file banate. But Amar kichu file e problem korchilo tai separate kori ni. I'll learn it as soon as possible .
+Sorry I know that amader instruction deya hoyechilo different 
+functionality er jonno different file banate. But Amar kichu 
+file e problem korchilo tai separate kori ni. I'll learn it as soon as possible .
 
 mark kaiten na vaiyaaaaaaaaa :(
 
