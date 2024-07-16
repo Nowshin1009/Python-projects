@@ -1,33 +1,4 @@
-contact_Book= [
-
- {
-    "name":"Taki",
-    "phone":"01728437694",
-    "email":"taki@diu.edu.bd"
-},
-
- {
-    "name":"Taifa",
-    "phone":"01728437694",
-    "email":"taifa@diu.edu.bd"
-},
- {
-    "name":"Tara",
-    "phone":"01728437694",
-    "email":"tara@diu.edu.bd"
-},
- {
-    "name":"Tufa",
-    "phone":"01728437694",
-    "email":"tufa@diu.edu.bd"
-},
-
- {
-    "name":"Afsana",
-    "phone":"01728437694",
-    "email":"afsana@diu.edu.bd"
-}
-]
+contact_Book=[]
 
 
 def create_contact():
@@ -126,7 +97,7 @@ def restore_contact():
     # read all contacts
     # save them to global contact book variable
 
-    contact_book.clear()
+    contact_Book.clear()
 
     with open("contacts.csv", "r") as file_pointer:
         for line in file_pointer.readlines():
@@ -136,7 +107,7 @@ def restore_contact():
                 "phone": line_splitted[1],
                 "email": line_splitted[2],
             }
-            contact_book.append(contact)
+            contact_Book.append(contact)
 
     print("Contacts Restored!")
 
