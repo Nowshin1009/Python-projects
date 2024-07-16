@@ -1,7 +1,6 @@
 contact_Book=[]
 
-
-def create_contact():
+def create_contact(conact_Book):
     name = input("Enter name : ")
     phone =  input ("Enter phone no. :")
     email = input("Enter email : ")
@@ -15,6 +14,7 @@ def create_contact():
     contact_Book.append(contact)
 
     print("Contact created successfully!")
+
 
 def view_all_contacts():
     for index, contact in enumerate(contact_Book):
